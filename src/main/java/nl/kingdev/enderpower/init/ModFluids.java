@@ -7,6 +7,7 @@ import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import nl.kingdev.enderpower.fluids.BlockFluidFlowing;
 import nl.kingdev.enderpower.fluids.FluidEP;
 
 import java.util.Locale;
@@ -23,7 +24,7 @@ public class ModFluids {
         Fluid fluid = new FluidEP(fluidName.toLowerCase(Locale.ROOT), fluidTextureName).setRarity(rarity);
         FluidRegistry.registerFluid(fluid);
         FluidRegistry.addBucketForFluid(fluid);
-        Block b = registerFluidBlock(fluid, Material.WATER);
+        Block b = registerFluidBlock(fluid, Material.WATER, "block_enderfluid");
         fluid.setBlock(b);
 
         System.out.println("FluidBlock " + b.getUnlocalizedName());
@@ -33,8 +34,8 @@ public class ModFluids {
         return FluidRegistry.getFluid(fluid.getName());
     }
 
-    private static Block registerFluidBlock(Fluid fluid, Material material){
-        return new BlockFluidClassic(fluid, material);
+    private static Block registerFluidBlock(Fluid fluid, Material material, String name){
+        return new BlockFluidFlowing(fluid, material, name);
     }
 
 

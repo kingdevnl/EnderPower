@@ -6,6 +6,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import nl.kingdev.enderpower.init.ModBlocks;
 import nl.kingdev.enderpower.init.ModFluids;
 import nl.kingdev.enderpower.init.ModItems;
 import nl.kingdev.enderpower.proxy.CommonProxy;
@@ -26,6 +27,7 @@ public class EnderPower {
     public void onPreInit(FMLPreInitializationEvent e) {
         System.out.println("EnderPower.onPreInit");
         ModItems.register();
+        ModBlocks.register();
         ModFluids.register();
 
         proxy.onPreInit(e);
