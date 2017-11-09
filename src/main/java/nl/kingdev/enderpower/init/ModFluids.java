@@ -26,6 +26,7 @@ public class ModFluids {
         FluidRegistry.addBucketForFluid(fluid);
         Block b = registerFluidBlock(fluid, Material.WATER, "block_enderfluid");
         fluid.setBlock(b);
+        
 
         System.out.println("FluidBlock " + b.getUnlocalizedName());
 
