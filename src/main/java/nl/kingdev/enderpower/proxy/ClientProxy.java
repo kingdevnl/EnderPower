@@ -15,6 +15,8 @@ public class ClientProxy extends CommonProxy {
 
     private void registerCustomFluidBlockRenderer(Fluid fluid){
         Block block = fluid.getBlock();
+        System.out.println("FluidBlock " + block.getUnlocalizedName());
+
         Item item = Item.getItemFromBlock(block);
         FluidStateMapper mapper = new FluidStateMapper(fluid);
         ModelLoader.registerItemVariants(item);
